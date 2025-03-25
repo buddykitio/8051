@@ -107,9 +107,3 @@ Open source for educational use
 - Email: buddykit@sakthicontroller.com
 - Website: [buddykit.io](https://buddykit.io)
 
-
-Would you like me to add any specific SDCC-related details like:
-- Makefile examples for automated builds
-- Advanced SDCC compiler flags
-- Debugging with SDCC
-- Specific W78E52D header file configurations?
