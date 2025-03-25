@@ -1,11 +1,9 @@
 
-
-
 # 8051 Development Board with Micro USB Programming
 
 ![Board Image](https://via.placeholder.com/400x250) *(Replace with actual image)*
 
-A compact, beginner-friendly 8051 development board with micro USB programming and inbuilt LED, designed for embedded systems learning. Fully compatible with Keil µVision IDE.
+A compact, beginner-friendly 8051 development board with micro USB programming and inbuilt LED, designed for embedded systems learning. Uses SDCC (Small Device C Compiler) for open-source development.
 
 ## 📌 Features
 - **8051 Microcontroller** (W78E52D)
@@ -15,7 +13,7 @@ A compact, beginner-friendly 8051 development board with micro USB programming a
 - **USB-powered** (5V) with voltage regulation
 - **Reset button** for debugging
 - **UART support** for serial communication
-- **Keil µVision IDE** compatible
+- **SDCC compatible** (Open-source toolchain)
 - **Low-cost** student-friendly design
 
 ## 🛠 Hardware Setup
@@ -25,28 +23,40 @@ A compact, beginner-friendly 8051 development board with micro USB programming a
 - USB-powered (no external supply needed)
 
 ### 2. Required Software
-- [Keil µVision IDE](https://www.keil.com/)
+- [SDCC Compiler](https://sdcc.sourceforge.net/)
 - USB-to-Serial drivers (CH340/CP2102 if needed)
-- [Novoton](https://www.nuvoton.com/resource-download.jsp?tp_GUID=SW1720200221181328))
+- [Flash Tool](https://www.nuvoton.com/tool-and-software/) (Nuvoton programmer)
 
-## 💻 Keil µVision Setup
-### 1. Install Keil C51
-1. Download from [keil.com](https://www.keil.com/)
-2. Install C51 compiler (free version has 2KB limit)
+## 💻 SDCC Setup
+### 1. Install SDCC
+#### Windows:
+Download installer from [SDCC website](https://sdcc.sourceforge.net/)
 
-### 2. Create New Project
-1. Project → New µVision Project
-2. Select your 8051 variant (e.g. W78E52D)
-3. Add startup file (usually auto-added)
+#### Linux (Debian/Ubuntu):
+```bash
+sudo apt install sdcc
+```
 
-### 3. Build and Flash
-1. Write code in `.c` file
-2. Build (F7) to generate `.hex`
-3. Flash using Novoton
+#### macOS:
+```bash
+brew install sdcc
+```
+
+### 2. Compile and Flash
+1. Write your code in `.c` file
+2. Compile:
+```bash
+sdcc main.c
+```
+3. Generate HEX file:
+```bash
+packihx main.ihx > main.hex
+```
+4. Flash using Nuvoton programmer
 
 ## 👨‍💻 Example Code (Blink LED)
 ```c
-#include <W78E52D.H>
+#include <W78E52D.h>
 #define LED P1_1
 
 void delay(unsigned int ms) {
@@ -57,41 +67,49 @@ void delay(unsigned int ms) {
 
 void main() {
     while(1) {
-        LED = 0;    
+        LED = 0;    // LED ON
         delay(500);
-        LED = 1;    
+        LED = 1;    // LED OFF
         delay(500);
     }
 }
 ```
 
 ### Steps to Run:
-1. Create new Keil project
-2. Add this code to `main.c`
-3. Build (F7) → generates `.hex`
-4. Flash using Novoton
+1. Save as `main.c`
+2. Compile: `sdcc main.c`
+3. Generate HEX: `packihx main.ihx > main.hex`
+4. Flash using Nuvoton tool
 
 ## 📚 Learning Resources
-- [Keil 8051 Tutorial](https://www.keil.com/support/man/docs/c51/)
-- [8051 Embedded C Guide](https://www.electronicshub.org/8051-tutorials/)
-- [ Novoton](https://www.nuvoton.com/tool-and-software/debugger-and-programmer/1-to-1-debugger-and-programmer/nu-link2-pro/?index=5)
+- [SDCC Manual](http://sdcc.sourceforge.net/doc/sdccman.pdf)
+- [8051 with SDCC Guide](https://electronics.stackexchange.com/questions/tagged/sdcc+8051)
+- [Nuvoton Programming Tools](https://www.nuvoton.com/tool-and-software/)
 
 ## 🔧 Troubleshooting
 | Issue | Solution |
 |-------|----------|
-| Board not detected | Install CH340/CP2102 drivers |
-| Hex not flashing | Check COM port/baud rate |
+| SDCC not found | Add to PATH or reinstall |
+| "packihx not found" | Install SDCC completely |
+| Board not detected | Check USB drivers |
 
 ## 📜 License
- Open source for educational use
+Open source for educational use
 
 ## 🤝 Contributing
-Contributions welcome! Please:
 1. Fork the project
-2. Create your feature branch
-3. Submit a pull request
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## 📧 Contact
-- Email: mailemail@example.com
-- Website: [your-website.com](https://your-website.com)
+- Email: buddykit@sakthicontroller.com
+- Website: [buddykit.io](https://buddykit.io)
 
+
+Would you like me to add any specific SDCC-related details like:
+- Makefile examples for automated builds
+- Advanced SDCC compiler flags
+- Debugging with SDCC
+- Specific W78E52D header file configurations?
