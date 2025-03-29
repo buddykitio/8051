@@ -31,20 +31,18 @@ A compact, beginner-friendly 8051 development board with micro USB programming, 
 #include <W78E52D.h>
 #define LED P1_1
 
-void delay_ms(unsigned int ms) {
-    while(ms--) {
-        unsigned int x = 1275;
-        while(x--);
-    }
+void delay(unsigned int ms) {
+    unsigned int i, j;
+    for(i=0; i<ms; i++)
+        for(j=0; j<1275; j++);
 }
 
 void main() {
-    P1M1 = 0x00;  // Configure P1 as quasi-bidirectional
-    P1M2 = 0x00;
-    
     while(1) {
-        LED = !LED;  // Toggle LED
-        delay_ms(500);
+        LED = 0;    // LED ON
+        delay(500);
+        LED = 1;    // LED OFF
+        delay(500);
     }
 }
 ```
