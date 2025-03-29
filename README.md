@@ -1,7 +1,7 @@
 
 # 8051 Development Board with Micro USB Programming
 
-![Board Image](https://github.com/buddykitio/Buddy51mini/blob/main/Hardware/Image/Buddy51mini_front.png) 
+![Board Image](https://github.com/buddykitio/Buddy51mini/blob/a26dbdbc1f81b5916e59abed97052b4c53e33421/Hardware/Image/Buddy51mini.jpg) 
 
 A compact, beginner-friendly 8051 development board with micro USB programming and inbuilt LED, designed for embedded systems learning. Uses SDCC (Small Device C Compiler) for open-source development.
 
