@@ -28,7 +28,7 @@ A compact, beginner-friendly 8051 development board with micro USB programming, 
 
 ### 2.Basic Program (Blink LED)
 ```c
-#include <W78E52D.h>
+#include <8051.h>
 #define LED P1_1
 
 void delay(unsigned int ms) {
