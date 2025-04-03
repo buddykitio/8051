@@ -12,8 +12,7 @@ A compact, beginner-friendly 8051 development board with micro USB programming, 
 - **Inbuilt LED** for GPIO testing
 - **Breadboard-friendly** design
 - **USB-powered** (5V) with voltage regulation
-- **Reset button** for debugging
-- **UART support** for serial communication
+- **USB UART support** for serial communication
 - **SDCC compatible** (Open-source toolchain)
 - **Low-cost** student-friendly design
 
@@ -49,7 +48,7 @@ void main() {
 
 ## ⚙️ Compilation & Flashing
 For complete compilation workflow and project templates, see our dedicated repository:
-[Buddy51-BasicProject](https://github.com/buddykitio/Buddy51-BasicProject)
+[Buddy51-Project](https://github.com/buddykitio/Buddy51-Project)
 
 ## 📚 Learning Resources
 - **SDCC Documentation**: 
