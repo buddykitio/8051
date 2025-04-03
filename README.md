@@ -2,7 +2,7 @@
 
 # Buddy51 Mini - 8051 Development Board
 
-![Board Image](https://github.com/buddykitio/Buddy51mini/blob/a26dbdbc1f81b5916e59abed97052b4c53e33421/Hardware/Image/Buddy51mini.jpg)
+![Board Image](https://github.com/buddykitio/Buddy51mini/Hardware/Image/Buddy51mini.jpg)
 
 A compact, beginner-friendly 8051 development board with micro USB programming, designed for embedded systems education.
 
