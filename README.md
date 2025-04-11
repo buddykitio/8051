@@ -60,7 +60,7 @@ For complete compilation workflow and project templates, see our dedicated repos
 | Symptom | Solution |
 |---------|----------|
 | Board not recognized | Install CH340 drivers |
-| SDCC compilation errors | Check `#include` paths for W78E52D headers |
+| SDCC compilation errors | Check `#include` paths for  headers |
 | Flashing fails | Ensure proper COM port selection in Nuvoton tool |
 
 ## 🤝 Contributing
